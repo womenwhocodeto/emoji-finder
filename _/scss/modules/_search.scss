@@ -1,0 +1,37 @@
+//----------------------------------------------------------------
+//  Search
+//----------------------------------------------------------------
+.search {
+    position: relative;
+    &:after {
+        position: absolute;
+        top: 11px;
+        right: 12px;
+
+        display: block;
+
+        width: 20px;
+        height: 20px;
+
+        content: '';
+        pointer-events: none;
+
+        opacity: .6;
+        background: url(_/images/search.svg) center no-repeat;
+        background-size: contain;
+    }
+}
+
+.search--input {
+    font-size: 16px;
+    line-height: 1.5;
+
+    width: 100%;
+    padding: 8px 36px 8px 12px;
+
+    border: 1px solid #ddd;
+    &:focus {
+        outline: none;
+        box-shadow: 0 2px 3px rgba(0,0,0,.3);
+    }
+}
