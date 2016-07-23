@@ -1,0 +1,38 @@
+//----------------------------------------------------------------
+//  Emojis
+//----------------------------------------------------------------
+.emojis {
+    margin: 50px -16px 0;
+}
+
+.emojis--item {
+    font-size: 80px;
+    line-height: 1;
+
+    position: relative;
+
+    display: inline-block;
+
+    padding: 0 16px;
+    margin-bottom: 16px;
+
+    &:after {
+        font-size: 11px;
+        font-weight: 700;
+
+        position: absolute;
+        top: calc(50% - 8px);
+        left: 0;
+
+        width: 100%;
+        padding: 3px 5px 5px;
+
+        content: 'Copied successfully';
+        text-align: center;
+        pointer-events: none;
+
+        opacity: 0;
+        color: white;
+        background: blue;
+    }
+}

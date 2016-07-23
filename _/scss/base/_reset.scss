@@ -61,19 +61,6 @@ section {
     display: block;
 }
 
-audio,
-canvas,
-progress,
-video {
-    display: inline-block;
-    vertical-align: baseline;
-}
-
-audio:not([controls]) {
-    display: none;
-    height: 0;
-}
-
 [hidden] {
     display: none;
 }
@@ -107,37 +94,18 @@ ul {
     list-style: none;
 }
 
-blockquote, 
-q {
-    quotes: none;
+::-webkit-input-placeholder {
+   color: #000;
 }
 
-blockquote:before, 
-blockquote:after,
-q:before, 
-q:after {
-    content: '';
-    content: none;
+:-moz-placeholder { /* Firefox 18- */
+   color: #000;  
 }
 
-table {
-    border-collapse: collapse;
-    border-spacing: 0;
-
-    td,
-    th {
-        padding: 0;
-    }
+::-moz-placeholder {  /* Firefox 19+ */
+   color: #000;  
 }
 
-svg:not(:root) {
-    overflow: hidden;
-}
-
-code,
-kbd,
-pre,
-samp {
-    font-family: monospace, monospace;
-    font-size: 14px;
+:-ms-input-placeholder {  
+   color: #000;  
 }
