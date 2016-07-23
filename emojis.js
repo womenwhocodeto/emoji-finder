@@ -645,8 +645,8 @@ const EMOJIS = [
   {
     "emoji": "💩",
     "keywords": [
-      "hankey",
       "poop",
+      "hankey",
       "crap"
     ]
   },
