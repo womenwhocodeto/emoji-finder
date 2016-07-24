@@ -4,13 +4,13 @@ We've included babel-standalone via CDNJS in the `<head>` of `index.html`. This 
 
 Even on sites without a backend (i.e. Node.js), it's recommended that you use a build system, such as Gulp, Grunt, or Webpack. See how to do so on [Babel docs here](http://babeljs.io/docs/setup/).
 
-We use babel-standalone because our example project requires using Babel as just a compiler for our code. Make sure to read through the use cases here: [README.md](https://github.com/Daniel15/babel-standalone/blob/master/README.md)
+We use babel-standalone because our example project requires using Babel to quickly demonstrate the usage of ES2015 features. Make sure to read through the use cases here: [README.md](https://github.com/Daniel15/babel-standalone/blob/master/README.md)
 
 
 # Emoji Browser Support
 Take a look at the support for emojis on various operating systems and their browsers today: [CanIEmoji](http://caniemoji.com/)
 
-We've excluded the number emojis due to their lack of support on Chrome. We encourage you to try out adding fallback support with a JS library such as [JS Emoji](https://github.com/iamcal/js-emoji)
+We've excluded the number emojis due to their lack of support on Chrome. We encourage you to try out adding fallback support with a JS library such as [JS Emoji](https://github.com/iamcal/js-emoji) or the open-source emoji set [Emoji One](https://github.com/Ranks/emojione)
 
 
 # Above and Beyond
