@@ -8,7 +8,9 @@ We use babel-standalone because our example project requires using Babel as just
 
 
 # Emoji Browser Support
-Take a look at the support for emojis on various operating systems and their browsers today: http://caniemoji.com/ 
+Take a look at the support for emojis on various operating systems and their browsers today: [CanIEmoji](http://caniemoji.com/)
+
+We've excluded the number emojis due to their lack of support on Chrome. We encourage you to try out adding fallback support with a JS library such as [JS Emoji](https://github.com/iamcal/js-emoji)
 
 
 # Above and Beyond
