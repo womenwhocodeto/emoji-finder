@@ -1,10 +1,21 @@
-# Babel
-## When to Use [babel-standalone](https://github.com/Daniel15/babel-standalone)
-We've included babel-standalone via CDNJS in the `<head>` of `index.html`. This is **not** the recommended method for use on projects going to production.
+# Emoji Finder
+## Yer emoji clipboard!
+Sure you can add emojis by using your operating system's keyboard, or shortcuts. On a Mac, that often means you have to search for the emoji with their restrictive keyword choices. Otherwise you'll have to scroll down for an eternity or less to find it.
+
+You can never search for 💩 the way you want:
+![refuse to search this way!](http://g.recordit.co/tiCHLNucFZ.gif)
+
+We demand better! We should use our own search words for emojis! Emoji freedom. Emoji efficiency.
+
+This app will copy the emoji to your clipboard automatically if the search matches down to one. Or your selection is just a single click away. Boom.💥✨
+
+
+# Using Babel
+We've included [babel-standalone](https://github.com/Daniel15/babel-standalone) via CDNJS as a `<script>` in the `<head>` of `index.html`. This is **not** the recommended method for use on projects going to production.
 
 Even on sites without a backend (i.e. Node.js), it's recommended that you use a build system, such as Gulp, Grunt, or Webpack. See how to do so on [Babel docs here](http://babeljs.io/docs/setup/).
 
-We use babel-standalone because our example project requires using Babel to quickly demonstrate the usage of ES2015 features. Make sure to read through the use cases here: [README.md](https://github.com/Daniel15/babel-standalone/blob/master/README.md)
+We use babel-standalone because our example project only requires Babel to quickly demonstrate the usage of ES2015 features. Make sure to read through the use cases here: [README.md](https://github.com/Daniel15/babel-standalone/blob/master/README.md)
 
 
 # Emoji Browser Support
@@ -18,11 +29,14 @@ We've excluded the number emojis due to their lack of support on Chrome. We enco
 Just to clarify - it is **not required** to run gulp for the meetup. It's only being used to compile the styles. However if you'd like to play around on your own time, follow the steps below to get setup.
 
 #### 1. Install Dependencies
-First, ensure you have `Node.JS` installed. Download that [here](https://nodejs.org/en/).
+First, ensure you have Node.js installed. Download that [here](https://nodejs.org/en/).
 
 In a terminal window, enter `cd path/to/filename` (change path to match wherever your emoji-finder folder is located).
 
 Enter `npm install`. This will automatically install all dependencies for the project :)
 
 #### 2. Actually Running Gulp
-After you've done the above, and `npm install` has stopped doing it's magic, enter `gulp default`. Now whenever you update a `scss` file gulp will automatically recompile to `css`. To end the session, press ctrl+c on your keyboard.
+After you've done the above, and `npm install` has stopped doing it's magic, enter `gulp default`. Now whenever you update a `.scss` file gulp will automatically recompile to `.css`. To end the session, press ctrl+c on your keyboard.
+
+#### 3. Bonus: Add Babel With Gulp
+Extra shiny step for bonus learning points: install gulp-babel by following the instructions [here](https://github.com/babel/gulp-babel) or on [Babel docs here](http://babeljs.io/docs/setup/) (click Gulp as your choice of build system). Don't forget to then remove the babel-standalone `<script>` tag from the `<head>` in `index.html`.
