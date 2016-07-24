@@ -4,7 +4,13 @@
 * {
 	font-family: 'Lato', sans-serif;
 }
+
+body {
+	padding-top: 100px;
+}
+
 section {
-	max-width: 900px;
+	max-width: 1000px;
 	margin: 0 auto;
+	padding: 0 50px;
 }

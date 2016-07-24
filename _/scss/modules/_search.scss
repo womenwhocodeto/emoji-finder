@@ -3,9 +3,10 @@
 //----------------------------------------------------------------
 .search {
     position: relative;
+
     &:after {
         position: absolute;
-        top: 11px;
+        top: 13px;
         right: 12px;
 
         display: block;
@@ -16,7 +17,6 @@
         content: '';
         pointer-events: none;
 
-        opacity: .6;
         background: url(_/images/search.svg) center no-repeat;
         background-size: contain;
     }
@@ -29,7 +29,8 @@
     width: 100%;
     padding: 8px 36px 8px 12px;
 
-    border: 1px solid #ddd;
+    border: 3px solid #000;
+    
     &:focus {
         outline: none;
         box-shadow: 0 2px 3px rgba(0,0,0,.3);

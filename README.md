@@ -1,3 +1,17 @@
+# Babel
+## When to Use [babel-standalone](https://github.com/Daniel15/babel-standalone)
+We've included babel-standalone via CDNJS in the `<head>` of `index.html`. This is **not** the recommended method for use on projects going to production.
+
+Even on sites without a backend (i.e. Node.js), it's recommended that you use a build system, such as Gulp, Grunt, or Webpack. See how to do so on [Babel docs here](http://babeljs.io/docs/setup/).
+
+We use babel-standalone because our example project requires using Babel as just a compiler for our code. Make sure to read through the use cases here: [README.md](https://github.com/Daniel15/babel-standalone/blob/master/README.md)
+
+
+# Emoji Browser Support
+Take a look at the support for emojis on various operating systems and their browsers today: http://caniemoji.com/ 
+
+
+# Above and Beyond
 ## Running Gulp
 Just to clarify - it is **not required** to run gulp for the meetup. It's only being used to compile the styles. However if you'd like to play around on your own time, follow the steps below to get setup.
 
