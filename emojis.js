@@ -4302,86 +4302,6 @@ const EMOJIS = [
     ]
   },
   {
-    "emoji": "1️⃣",
-    "keywords": [
-      "one"
-    ]
-  },
-  {
-    "emoji": "2️⃣",
-    "keywords": [
-      "two"
-    ]
-  },
-  {
-    "emoji": "3️⃣",
-    "keywords": [
-      "three"
-    ]
-  },
-  {
-    "emoji": "4️⃣",
-    "keywords": [
-      "four"
-    ]
-  },
-  {
-    "emoji": "5️⃣",
-    "keywords": [
-      "five"
-    ]
-  },
-  {
-    "emoji": "6️⃣",
-    "keywords": [
-      "six"
-    ]
-  },
-  {
-    "emoji": "7️⃣",
-    "keywords": [
-      "seven"
-    ]
-  },
-  {
-    "emoji": "8️⃣",
-    "keywords": [
-      "eight"
-    ]
-  },
-  {
-    "emoji": "9️⃣",
-    "keywords": [
-      "nine"
-    ]
-  },
-  {
-    "emoji": "9️⃣",
-    "keywords": [
-      "zero"
-    ]
-  },
-  {
-    "emoji": "🔟",
-    "keywords": [
-      "keycap_ten"
-    ]
-  },
-  {
-    "emoji": "🔢",
-    "keywords": [
-      "1234",
-      "numbers"
-    ]
-  },
-  {
-    "emoji": "#️⃣",
-    "keywords": [
-      "hash",
-      "number"
-    ]
-  },
-  {
     "emoji": "🔣",
     "keywords": [
       "symbols"
@@ -5045,7 +4965,7 @@ const EMOJIS = [
   {
     "emoji": "♏",
     "keywords": [
-      "scorpius"
+      "scorpio"
     ]
   },
   {
