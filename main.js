@@ -27,16 +27,19 @@ const removeClass = (el, oldClass) => {
   }, false);
 
   const matchKeyword = (value) => {
-    let matchedObjects = EMOJIS.filter(filterByKeyword.bind(this, value));
+    let matchedEmojis;
+    const matchedObjects = EMOJIS.filter(filterByKeyword.bind(this, value));
     if (matchedObjects.length == 0) return;
 
     if (matchedObjects.length > 1) {
-      // console.log(matchedObjects.map((obj) => { return obj.emoji; }));
-      return matchedObjects.map((obj) => { return obj.emoji; });
+      matchedEmojis = matchedObjects.map((obj) => {
+        return obj.emoji;
+      });
+    } else {
+      matchedEmojis = matchedObjects[0].emoji;
     }
-
-    matchedObjects[0].emoji;
-    // console.log(matchedObjects[0].emoji);
+    // console.log(matchedEmojis);
+    return matchedEmojis;
   }
 
   const filterByKeyword = (value, obj) => {
