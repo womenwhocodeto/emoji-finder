@@ -7,7 +7,7 @@ You can never search for 💩 the way you want:
 
 We demand better! We should use our own search words for emojis! Emoji freedom. Emoji efficiency.
 
-This app will copy the emoji to your clipboard automatically if the search matches down to one. Or your selection is just a single click away. Boom.💥✨
+This app prompts you to copy the emoji to your clipboard when the search matches down to one. Or your selection is a single click away. Boom.💥✨
 
 
 # Using Babel

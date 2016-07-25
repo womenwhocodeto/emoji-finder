@@ -39,7 +39,7 @@ const removeClass = (el, oldClass) => {
       matchedEmojiTitles = matchedObjects[0].keywords[0];
     }
 
-    return matchedEmojiTitles;
+    // do something with matchedEmojiTitles here
   }
 
   const filterByKeyword = (value, obj) => {
