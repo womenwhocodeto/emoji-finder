@@ -39,6 +39,8 @@ body { padding-top: 100px; }
 
 section { max-width: 1000px; margin: 0 auto; padding: 0 50px; }
 
+.hidden { display: none; }
+
 .search { position: relative; }
 
 .search:after { position: absolute; top: 13px; right: 12px; display: block; width: 20px; height: 20px; content: ''; pointer-events: none; background: url(_/images/search.svg) center no-repeat; background-size: contain; }
@@ -46,6 +48,8 @@ section { max-width: 1000px; margin: 0 auto; padding: 0 50px; }
 .search--input { font-size: 16px; line-height: 1.5; width: 100%; padding: 8px 36px 8px 12px; border: 3px solid #000; }
 
 .search--input:focus { outline: none; box-shadow: 0 2px 3px rgba(0, 0, 0, 0.3); }
+
+.filtering .emojis--item:not(.visible) { display: none; }
 
 .emojis { margin: 50px -16px 0; }
 
