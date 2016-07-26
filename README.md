@@ -3,6 +3,7 @@
 Sure you can add emojis by using your operating system's keyboard, or shortcuts. On a Mac, that often means you have to search for the emoji with their restrictive keyword choices. Otherwise you'll have to scroll down for an eternity or less to find it.
 
 You can never search for 💩 the way you want:
+
 ![refuse to search this way!](http://g.recordit.co/tiCHLNucFZ.gif)
 
 We demand better! We should use our own search words for emojis! Emoji freedom. Emoji efficiency.
