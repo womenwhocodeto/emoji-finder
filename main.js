@@ -29,7 +29,7 @@ const removeClass = (el, oldClass) => {
       
       const prevFilter = document.getElementsByClassName('visible');
     
-      oldEmojis(prevFilter);
+      resetOldEmojis(prevFilter);
     }
   }, false);
 
@@ -46,8 +46,7 @@ const removeClass = (el, oldClass) => {
 
     const prevFilter = document.getElementsByClassName('visible');
 
-    oldEmojis(prevFilter);
-
+    resetOldEmojis(prevFilter);
 
     for (const emoji of matchedEmojiTitles) {
       const emojiItem = document.querySelector('[title="' + emoji + '"]');
@@ -60,7 +59,7 @@ const removeClass = (el, oldClass) => {
     addClass(siteContainer[0], 'filtering');
   }
 
-  const oldEmojis = (value) => {
+  const resetOldEmojis = (value) => {
     for (const prev of value) {
       removeClass(prev, 'visible');
     };
