@@ -20,16 +20,16 @@ const removeClass = (el, oldClass) => {
 
   inputField.addEventListener("input", (event) => {
     const value = event.target.value;
+    const prevFilter = document.getElementsByClassName('visible');
     if (typeTimeout) window.clearTimeout(typeTimeout);
+  
+    resetOldEmojis(prevFilter);
 
     if (value) {
       typeTimeout = delay(matchKeyword(value), TYPE_INTERVAL);
     } else {
       removeClass(siteContainer[0], 'filtering');
       
-      const prevFilter = document.getElementsByClassName('visible');
-    
-      resetOldEmojis(prevFilter);
     }
   }, false);
 
@@ -43,10 +43,6 @@ const removeClass = (el, oldClass) => {
     matchedObjects.map((obj) => {
       matchedEmojiTitles.push(obj.keywords[0]);
     });
-
-    const prevFilter = document.getElementsByClassName('visible');
-
-    resetOldEmojis(prevFilter);
 
     for (const emoji of matchedEmojiTitles) {
       const emojiItem = document.querySelector(`[title="${emoji}"]`);
