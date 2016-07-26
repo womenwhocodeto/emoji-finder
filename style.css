@@ -47,6 +47,8 @@ section { max-width: 1000px; margin: 0 auto; padding: 0 50px; }
 
 .search--input:focus { outline: none; box-shadow: 0 2px 3px rgba(0, 0, 0, 0.3); }
 
+.filtering .emojis--item:not(.visible) { display: none; }
+
 .emojis { margin: 50px -16px 0; }
 
 .emojis--item { font-size: 80px; line-height: 1; position: relative; display: inline-block; padding: 0 16px; margin-bottom: 16px; }
