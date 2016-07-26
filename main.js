@@ -27,17 +27,13 @@ const removeClass = (el, oldClass) => {
   }, false);
 
   const matchKeyword = (value) => {
-    let matchedEmojiTitles;
+    let matchedEmojiTitles = [];
     const matchedObjects = EMOJIS.filter(filterByKeyword.bind(this, value));
     if (matchedObjects.length == 0) return;
 
-    if (matchedObjects.length > 1) {
-      matchedEmojiTitles = matchedObjects.map((obj) => {
-        return obj.keywords[0];
-      });
-    } else {
-      matchedEmojiTitles = matchedObjects[0].keywords[0];
-    }
+    matchedObjects.map((obj) => {
+      matchedEmojiTitles.push(obj.keywords[0]);
+    });
 
     // do something with matchedEmojiTitles here
   }
