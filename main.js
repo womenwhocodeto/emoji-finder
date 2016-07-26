@@ -49,7 +49,7 @@ const removeClass = (el, oldClass) => {
     resetOldEmojis(prevFilter);
 
     for (const emoji of matchedEmojiTitles) {
-      const emojiItem = document.querySelector('[title="' + emoji + '"]');
+      const emojiItem = document.querySelector(`[title="${emoji}"]`);
 
       if (emojiItem) {
         addClass(emojiItem.parentElement,'visible');
