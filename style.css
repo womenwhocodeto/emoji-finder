@@ -39,6 +39,8 @@ body { padding-top: 100px; }
 
 section { max-width: 1000px; margin: 0 auto; padding: 0 50px; }
 
+.hidden { display: none; }
+
 .search { position: relative; }
 
 .search:after { position: absolute; top: 13px; right: 12px; display: block; width: 20px; height: 20px; content: ''; pointer-events: none; background: url(_/images/search.svg) center no-repeat; background-size: contain; }
