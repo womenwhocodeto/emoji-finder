@@ -29,14 +29,12 @@ const removeClass = (el, oldClass) => {
       typeTimeout = delay(matchKeyword(value), TYPE_INTERVAL);
     } else {
       removeClass(siteContainer[0], 'filtering');
-      
     }
   }, false);
 
   const matchKeyword = (value) => {
     let matchedEmojiTitles = [];
     const matchedObjects = EMOJIS.filter(filterByKeyword.bind(this, value));
-
 
     if (matchedObjects.length == 0) return;
 
