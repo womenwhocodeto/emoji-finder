@@ -53,6 +53,7 @@ const removeAllElements = elements => {
       typeTimeout = delay(matchKeyword(value), TYPE_INTERVAL);
     } else {
       removeClass(siteContainer[0], 'filtering');
+      addClass(messageToClick, 'hidden');
 
       const hiddenFields = document.getElementsByClassName('copy--input');
       if (hiddenFields.length > 0) removeAllElements(hiddenFields);
