@@ -115,6 +115,7 @@ const removeAllElements = elements => {
       emojiElem = e.target,
       hiddenField = emojiElem.parentElement.getElementsByClassName('copy--input')[0],
       input = (hiddenField ? hiddenField : null);
+      copiedMessage = `${emojiElem.innerHTML} is copied!`;
 
     if (input && input.select) {
       input.select();
@@ -129,6 +130,7 @@ const removeAllElements = elements => {
 
       addClass(messageToClick, 'hidden');
       removeClass(messageConfirm, 'hidden');
+      messageConfirm.innerHTML = copiedMessage;
     }
   }
 
