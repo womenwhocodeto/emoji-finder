@@ -22,7 +22,7 @@ const removeClass = (el, oldClass) => {
     const value = event.target.value;
     const prevFilter = document.getElementsByClassName('visible');
     if (typeTimeout) window.clearTimeout(typeTimeout);
-  
+
     resetOldEmojis(prevFilter);
 
     if (value) {
@@ -38,19 +38,17 @@ const removeClass = (el, oldClass) => {
 
     if (matchedObjects.length == 0) return;
 
-    matchedObjects.map((obj) => {
-      matchedEmojiTitles.push(obj.keywords[0]);
-    });
-
-    for (const emoji of matchedEmojiTitles) {
-      const emojiItem = document.querySelector(`[title="${emoji}"]`);
-
-      if (emojiItem) {
-        addClass(emojiItem.parentElement,'visible');
-      }
+    for (const matched of matchedObjects) {
+      setMatchedEmojiVisible(matched);
     }
 
     addClass(siteContainer[0], 'filtering');
+  }
+
+  const filterByKeyword = (value, obj) => {
+    return obj.keywords.some((keyword) => {
+      return value === keyword;
+    });
   }
 
   const resetOldEmojis = (value) => {
@@ -59,10 +57,12 @@ const removeClass = (el, oldClass) => {
     };
   }
 
-  const filterByKeyword = (value, obj) => {
-    return obj.keywords.some((keyword) => {
-      return value === keyword;
-    });
+  const setMatchedEmojiVisible = ({emoji, keywords}) => {
+    const emojiItem = document.querySelector(`[title="${keywords[0]}"]`);
+
+    if (emojiItem) {
+      addClass(emojiItem.parentElement, 'visible');
+    }
   }
 
   const delay = (func, delay) => {
