@@ -32,7 +32,9 @@ Just to clarify - it is **not required** to run gulp for the meetup. It's only b
 #### 1. Install Dependencies
 First, ensure you have Node.js installed. Download that [here](https://nodejs.org/en/).
 
-In a terminal window, enter `cd path/to/filename` (change path to match wherever your emoji-finder folder is located).
+Next, in a terminal window enter `npm install -g gulp`. This installs gulp globally on your system so that you can work with it.
+
+Then enter `cd path/to/filename` (change path to match wherever your emoji-finder folder is located).
 
 Enter `npm install`. This will automatically install all dependencies for the project :)
 
