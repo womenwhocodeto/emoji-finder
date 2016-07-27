@@ -19,6 +19,22 @@ section {
     opacity: 0;
 }
 
+.message {
+    position: absolute;
+    bottom: 0;
+    margin-bottom: -24px;
+    font-weight: 600;
+    font-size: 13px;
+}
+
+.message--confirm {
+  color: #00806a;
+}
+
+.message--click {
+  color: #e88b24;
+}
+
 .copy--input {
     position: fixed;
     left: 0;

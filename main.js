@@ -38,6 +38,8 @@ const removeAllElements = elements => {
   let typeTimeout;
   const TYPE_INTERVAL = 10000;
   const siteContainer = document.getElementsByTagName('body');
+  const messageToClick = document.getElementsByClassName('message--click')[0];
+  const messageConfirm = document.getElementsByClassName('message--confirm')[0];
 
   inputField.addEventListener("input", (event) => {
     const value = event.target.value;
@@ -45,6 +47,7 @@ const removeAllElements = elements => {
     if (typeTimeout) window.clearTimeout(typeTimeout);
 
     resetOldEmojis(prevFilter);
+    addClass(messageConfirm, 'hidden');
 
     if (value) {
       typeTimeout = delay(matchKeyword(value), TYPE_INTERVAL);
@@ -102,6 +105,8 @@ const removeAllElements = elements => {
       hiddenField.value = emojiElem.innerHTML;
       addedElem = parent.appendChild(hiddenField);
     }
+
+    removeClass(messageToClick, 'hidden');
   }
 
   const copyToClipboard = e => {
@@ -120,6 +125,9 @@ const removeAllElements = elements => {
       catch (error) {
         alert('Highlight the emoji and press Ctrl/Cmd+C to copy');
       }
+
+      addClass(messageToClick, 'hidden');
+      removeClass(messageConfirm, 'hidden');
     }
   }
 

@@ -41,6 +41,12 @@ section { max-width: 1000px; margin: 0 auto; padding: 0 50px; }
 
 .hidden { opacity: 0; }
 
+.message { position: absolute; bottom: 0; margin-bottom: -24px; font-weight: 600; font-size: 13px; }
+
+.message--confirm { color: #00806a; }
+
+.message--click { color: #e88b24; }
+
 .copy--input { position: fixed; left: 0; top: 0; margin-left: -100%; margin-top: -100%; opacity: 0; }
 
 .search { position: relative; }
