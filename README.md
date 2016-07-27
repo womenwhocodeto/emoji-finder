@@ -30,10 +30,10 @@ We've excluded the number emojis due to their lack of support on Chrome. We enco
 Just to clarify - it is **not required** to run gulp to work with the javascript. It's only being used to compile the scss. However if you'd like to play around on your own time , follow the steps below to get setup. 👯
 
 #### 1. Install Dependencies
-
 1. Ensure you have Node.js installed. Download that [here](https://nodejs.org/en/).
-2. In a terminal window, enter `cd path/to/filename` (change the path to match wherever your emoji-finder folder is located).
-3. Run `npm install`. This will automatically install all dependencies for the project 🍰
+2. Next, in a terminal window run `npm install -g gulp`. This installs gulp globally on your system so that you can actually play with it~
+3. Now enter `cd path/to/filename` (change the path to match wherever your emoji-finder folder is located).
+4. Run `npm install`. This will automatically install all dependencies for the project 🍰
 
 #### 2. Actually Running Gulp
 After you've done the above - and `npm install` has stopped doing it's 🔥 - run `gulp default`. Now whenever you update a `*.scss` file, gulp will automatically recompile to `*.css`. To end the session, in your terminal window type `ctrl+c`.
