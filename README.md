@@ -12,7 +12,7 @@ This app prompts you to copy the emoji to your clipboard when the search matches
 
 See it in action:
 
-![emoji freedom](http://g.recordit.co/2DQRBmdZiR.gif)
+![emoji freedom](https://www.dropbox.com/s/9qaw2ss3qywapj7/emojifinder.gif?raw=1)
 
 
 # Using Babel
