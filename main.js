@@ -17,7 +17,7 @@ const removeClass = (el, oldClass) => {
   let typeTimeout;
   const TYPE_INTERVAL = 10000;
   // Set variable for filtering purposes
-  const siteContainer = document.getElementsByTagName('body');
+  const siteContainer = document.getElementsByTagName('body')[0];
 
   inputField.addEventListener("input", (event) => {
     const value = event.target.value;
@@ -32,7 +32,7 @@ const removeClass = (el, oldClass) => {
       typeTimeout = delay(matchKeyword(value), TYPE_INTERVAL);
     } else {
       // Because the input has no value (and therefore we're not filtering), let's remove the filtering class from our site container
-      removeClass(siteContainer[0], 'filtering');
+      removeClass(siteContainer, 'filtering');
     }
   }, false);
 
@@ -59,7 +59,7 @@ const removeClass = (el, oldClass) => {
     }
 
     // Add a filtering class to the site container which will hide all emojis that do NOT have a visible class
-    addClass(siteContainer[0], 'filtering');
+    addClass(siteContainer, 'filtering');
   }
 
   // Resetting previous search results
