@@ -10,6 +10,10 @@ We demand better! We should use our own search words for emojis! Emoji freedom. 
 
 This app prompts you to copy the emoji to your clipboard when the search matches down to one. Or your selection is a single click away. Boom.💥✨
 
+See it in action:
+
+![emoji freedom](http://g.recordit.co/2DQRBmdZiR.gif)
+
 
 # Using Babel
 We've included [babel-standalone](https://github.com/Daniel15/babel-standalone) via CDNJS as a `<script>` in the `<head>` of `index.html`. This is **not** the recommended method for use on projects going to production.
@@ -27,17 +31,16 @@ We've excluded the number emojis due to their lack of support on Chrome. We enco
 
 # Above and Beyond
 ## Running Gulp
-Just to clarify - it is **not required** to run gulp for the meetup. It's only being used to compile the styles. However if you'd like to play around on your own time, follow the steps below to get setup.
+Just to clarify - it is **not required** to run gulp to work with the javascript. It's only being used to compile the scss. However if you'd like to play around on your own time , follow the steps below to get setup. 👯
 
 #### 1. Install Dependencies
-First, ensure you have Node.js installed. Download that [here](https://nodejs.org/en/).
-
-In a terminal window, enter `cd path/to/filename` (change path to match wherever your emoji-finder folder is located).
-
-Enter `npm install`. This will automatically install all dependencies for the project :)
+1. Ensure you have Node.js installed. Download that [here](https://nodejs.org/en/).
+2. Next, in a terminal window run `npm install -g gulp`. This installs gulp globally on your system so that you can actually play with it~
+3. Now enter `cd path/to/filename` (change the path to match wherever your emoji-finder folder is located).
+4. Run `npm install`. This will automatically install all dependencies for the project 🍰
 
 #### 2. Actually Running Gulp
-After you've done the above, and `npm install` has stopped doing it's magic, enter `gulp default`. Now whenever you update a `.scss` file gulp will automatically recompile to `.css`. To end the session, press ctrl+c on your keyboard.
+After you've done the above - and `npm install` has stopped doing it's 🔥 - run `gulp default`. Now whenever you update a `*.scss` file, gulp will automatically recompile to `*.css`. To end the session, in your terminal window type `ctrl+c`.
 
 #### 3. Bonus: Add Babel With Gulp
 Extra shiny step for bonus learning points: install gulp-babel by following the instructions [here](https://github.com/babel/gulp-babel) or on [Babel docs here](http://babeljs.io/docs/setup/) (click Gulp as your choice of build system). Don't forget to then remove the babel-standalone `<script>` tag from the `<head>` in `index.html`.
