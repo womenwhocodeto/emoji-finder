@@ -39,7 +39,9 @@ body { padding-top: 100px; }
 
 section { max-width: 1000px; margin: 0 auto; padding: 0 50px; }
 
-.hidden { display: none; }
+.hidden { opacity: 0; }
+
+.copy--input { position: fixed; left: 0; top: 0; margin-left: -100%; margin-top: -100%; opacity: 0; }
 
 .search { position: relative; }
 

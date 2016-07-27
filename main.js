@@ -11,6 +11,27 @@ const removeClass = (el, oldClass) => {
   ).join(" ");
 };
 
+const createElemWithProps = (elem, properties) => {
+  let element = document.createElement(elem);
+
+  for (let prop in properties) {
+    element[prop] = properties[prop];
+  }
+
+  return element;
+};
+
+const removeElem = (elem, parent) => {
+  parent.removeChild(elem);
+};
+
+const removeAllElements = elements => {
+  const allElements = elements;
+  for (i=0; i < allElements.length; i++) {
+    removeElem(allElements[i], allElements[i].parentElement);
+  }
+}
+
 // Search Script
 (() => {
   const inputField = document.getElementsByTagName('input')[0];
@@ -22,13 +43,16 @@ const removeClass = (el, oldClass) => {
     const value = event.target.value;
     const prevFilter = document.getElementsByClassName('visible');
     if (typeTimeout) window.clearTimeout(typeTimeout);
-  
+
     resetOldEmojis(prevFilter);
 
     if (value) {
       typeTimeout = delay(matchKeyword(value), TYPE_INTERVAL);
     } else {
       removeClass(siteContainer[0], 'filtering');
+
+      const hiddenFields = document.getElementsByClassName('copy--input');
+      if (hiddenFields.length > 0) removeAllElements(hiddenFields);
     }
   }, false);
 
@@ -46,7 +70,8 @@ const removeClass = (el, oldClass) => {
       const emojiItem = document.querySelector(`[title="${emoji}"]`);
 
       if (emojiItem) {
-        addClass(emojiItem.parentElement,'visible');
+        addClass(emojiItem.parentElement, 'visible');
+        highlightEmojiCharacter(emojiItem);
       }
     }
 
@@ -63,6 +88,39 @@ const removeClass = (el, oldClass) => {
     return obj.keywords.some((keyword) => {
       return value === keyword;
     });
+  }
+
+  const highlightEmojiCharacter = (emojiElem) => {
+    emojiElem.addEventListener('click', copyToClipboard, true);
+    const parent = emojiElem.parentElement;
+    const hiddenField = createElemWithProps('input', {
+      className: 'copy--input',
+      type: 'text'
+    });
+
+    if (parent.getElementsByClassName('copy--input').length == 0) {
+      hiddenField.value = emojiElem.innerHTML;
+      addedElem = parent.appendChild(hiddenField);
+    }
+  }
+
+  const copyToClipboard = e => {
+    const
+      emojiElem = e.target,
+      hiddenField = emojiElem.parentElement.getElementsByClassName('copy--input')[0],
+      input = (hiddenField ? hiddenField : null);
+
+    if (input && input.select) {
+      input.select();
+
+      try {
+        document.execCommand('copy');
+        input.blur();
+      }
+      catch (error) {
+        alert('Highlight the emoji and press Ctrl/Cmd+C to copy');
+      }
+    }
   }
 
   const delay = (func, delay) => {

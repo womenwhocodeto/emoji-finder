@@ -16,5 +16,14 @@ section {
 }
 
 .hidden {
-    display: none;
+    opacity: 0;
+}
+
+.copy--input {
+    position: fixed;
+    left: 0;
+    top: 0;
+    margin-left: -100%;
+    margin-top: -100%;
+    opacity: 0;
 }
