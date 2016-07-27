@@ -16,19 +16,23 @@ const removeClass = (el, oldClass) => {
   const inputField = document.getElementsByTagName('input')[0];
   let typeTimeout;
   const TYPE_INTERVAL = 10000;
-  const siteContainer = document.getElementsByTagName('body');
+  // Set variable for filtering purposes
+  const siteContainer = document.getElementsByTagName('body')[0];
 
   inputField.addEventListener("input", (event) => {
     const value = event.target.value;
+    // Set variable of any emojis set to "visible" (this returns elements if a previous search has already been done)
     const prevFilter = document.getElementsByClassName('visible');
     if (typeTimeout) window.clearTimeout(typeTimeout);
-
+  
+    // Reset the previous search results
     resetOldEmojis(prevFilter);
 
     if (value) {
       typeTimeout = delay(matchKeyword(value), TYPE_INTERVAL);
     } else {
-      removeClass(siteContainer[0], 'filtering');
+      // Because the input has no value (and therefore we're not filtering), let's remove the filtering class from our site container
+      removeClass(siteContainer, 'filtering');
     }
   }, false);
 
@@ -42,7 +46,8 @@ const removeClass = (el, oldClass) => {
       setMatchedEmojiVisible(matched);
     }
 
-    addClass(siteContainer[0], 'filtering');
+    // Add a filtering class to the site container which will hide all emojis that do NOT have a visible class
+    addClass(siteContainer, 'filtering');
   }
 
   const filterByKeyword = (value, obj) => {
@@ -51,8 +56,11 @@ const removeClass = (el, oldClass) => {
     });
   }
 
+  // Resetting previous search results
   const resetOldEmojis = (value) => {
+    // Loop through the array of emojis that was passed to the function
     for (const prev of value) {
+      // For each one, remove the visible class
       removeClass(prev, 'visible');
     };
   }
