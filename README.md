@@ -10,6 +10,10 @@ We demand better! We should use our own search words for emojis! Emoji freedom. 
 
 This app prompts you to copy the emoji to your clipboard when the search matches down to one. Or your selection is a single click away. Boom.💥✨
 
+See it in action:
+
+![emoji freedom](http://g.recordit.co/2DQRBmdZiR.gif)
+
 
 # Using Babel
 We've included [babel-standalone](https://github.com/Daniel15/babel-standalone) via CDNJS as a `<script>` in the `<head>` of `index.html`. This is **not** the recommended method for use on projects going to production.
