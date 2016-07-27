@@ -42,7 +42,9 @@ const removeClass = (el, oldClass) => {
 
     if (matchedObjects.length == 0) return;
 
+    // Looping through the array of emojis that match the search term
     for (const matched of matchedObjects) {
+      // Sending each emoji (from array) to function that set's them to visible
       setMatchedEmojiVisible(matched);
     }
 
@@ -65,10 +67,14 @@ const removeClass = (el, oldClass) => {
     };
   }
 
+  // Looping through array of matched emojis
   const setMatchedEmojiVisible = ({emoji, keywords}) => {
+    // Getting the link in index.html that corresponds to each array item
     const emojiItem = document.querySelector(`[title="${keywords[0]}"]`);
 
+    // If we successfully grabbed the link from index.html
     if (emojiItem) {
+      // Add a visible class to this emoji
       addClass(emojiItem.parentElement, 'visible');
     }
   }
