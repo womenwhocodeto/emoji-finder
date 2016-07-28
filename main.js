@@ -78,7 +78,7 @@ const removeAllElements = elements => {
     }
   }, false);
 
-  const matchKeyword = (value) => {
+  const matchKeyword = value => {
     // Create emoji array
     let matchedEmojiTitles = [];
 
@@ -108,7 +108,7 @@ const removeAllElements = elements => {
   }
 
   // Resetting previous search results
-  const resetOldEmojis = (value) => {
+  const resetOldEmojis = value => {
     // Loop through the array of emojis that was passed to the function
     for (const prev of value) {
       // For each one, remove the visible class
@@ -129,7 +129,7 @@ const removeAllElements = elements => {
     }
   }
 
-  const highlightEmojiCharacter = (emojiElem) => {
+  const highlightEmojiCharacter = emojiElem => {
     // bind a click event to the emoji link with copyToClipboard func
     emojiElem.addEventListener('click', copyToClipboard, true);
     // we need its parent container to check for hidden input fields inside
