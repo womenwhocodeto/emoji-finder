@@ -40,7 +40,7 @@ Just to clarify - it is **not required** to run gulp to work with the javascript
 4. Run `npm install`. This will automatically install all dependencies for the project 🍰
 
 #### 2. Actually Running Gulp
-After you've done the above - and `npm install` has stopped doing it's 🔥 - run `gulp default`. Now whenever you update a `*.scss` file, gulp will automatically recompile to `*.css`. To end the session, in your terminal window type `ctrl+c`.
+After you've done the above - and `npm install` has stopped doing it's 🔥 - run `gulp`. Now whenever you update a `*.scss` file, gulp will automatically recompile to `*.css`. To end the session, in your terminal window type `ctrl+c`.
 
 #### 3. Bonus: Add Babel With Gulp
 Extra shiny step for bonus learning points: install gulp-babel by following the instructions [here](https://github.com/babel/gulp-babel) or on [Babel docs here](http://babeljs.io/docs/setup/) (click Gulp as your choice of build system). Don't forget to then remove the babel-standalone `<script>` tag from the `<head>` in `index.html`.
