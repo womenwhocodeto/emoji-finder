@@ -102,7 +102,7 @@ const removeAllElements = elements => {
   const filterByKeyword = (value, obj) => {
     // Look at keywords in emoji.js and if they match value (from input) -> return true
       // Extra breakdown: some() loops through an array and only returns a truthy value when the conditions are met (ie when value === keyword)
-    return obj.keywords.some((keyword) => {
+    return obj.keywords.some(keyword => {
       return value === keyword;
     });
   }
@@ -117,9 +117,9 @@ const removeAllElements = elements => {
   }
 
   // Looping through array of matched emojis
-  const setMatchedEmojiVisible = ({emoji, keywords}) => {
+  const setMatchedEmojiVisible = ({/* destructuring - the keys of the objects passed in here! */}) => {
     // Getting the link in index.html that corresponds to each array item
-    const emojiItem = document.querySelector(`[title="${keywords[0]}"]`);
+    const emojiItem = document.querySelector(`[title="${/* what would you pass in here for it to work? */}"]`);
 
     // If we successfully grabbed the link from index.html
     if (emojiItem) {
