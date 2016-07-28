@@ -1,16 +1,3 @@
-// DOM utility functions
-const addClass = (el, newClass) => {
-  el.className += ` ${newClass}`;
-};
-
-const removeClass = (el, oldClass) => {
-  const currentClasses = el.className.split(" ");
-
-  el.className = currentClasses.filter(names =>
-    names.trim() !== "" && names !== oldClass
-  ).join(" ");
-};
-
 // Search Script
 (() => {
   const inputField = document.getElementsByTagName('input')[0];
@@ -27,24 +14,37 @@ const removeClass = (el, oldClass) => {
   }, false);
 
   const matchKeyword = (value) => {
-    let matchedEmojiTitles = [];
-    const matchedObjects = EMOJIS.filter(filterByKeyword.bind(this, value));
-    if (matchedObjects.length == 0) return;
-
-    matchedObjects.map((obj) => {
-      matchedEmojiTitles.push(obj.keywords[0]);
-    });
-
-    // do something with matchedEmojiTitles here
-  }
-
-  const filterByKeyword = (value, obj) => {
-    return obj.keywords.some((keyword) => {
-      return value === keyword;
-    });
+    // 1. Compare value against emojis
+    // 2. Verify that we got emojis based off the value
+    // 3. Add matched emojis to matchedEmojiTitles
   }
 
   const delay = (func, delay) => {
     window.setTimeout(func, delay);
   }
 })();
+
+
+
+
+
+
+
+
+// FOR REFERENCE: Please don't just copy and paste. How are you going to learn anything then? ;)
+// const matchKeyword = (value) => {
+//   let matchedEmojiTitles = [];
+//   const matchedObjects = EMOJIS.filter(filterByKeyword.bind(this, value));
+//   if (matchedObjects.length == 0) return;
+
+//   matchedObjects.map((obj) => {
+//     matchedEmojiTitles.push(obj.keywords[0]);
+//   });
+// }
+
+// const filterByKeyword = (value, obj) => {
+//   return obj.keywords.some((keyword) => {
+//     return value === keyword;
+//   });
+// }
+
