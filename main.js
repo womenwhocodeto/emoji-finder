@@ -4,17 +4,22 @@ const addClass = (el, newClass) => {
 };
 
 const removeClass = (el, oldClass) => {
+  // make an array of current classes on the element
   const currentClasses = el.className.split(" ");
 
-  el.className = currentClasses.filter(names =>
-    names.trim() !== "" && names !== oldClass
-  ).join(" ");
+  el.className = currentClasses.filter(name =>
+    // make sure that the class we want to keep actually is a string (not blank);
+    // also check if the class name we keep doesn't match the one to remove
+    name.trim() !== "" && name !== oldClass
+  ).join(" "); // join all the classes we want to keep with a space in b/t
 };
 
 const createElemWithProps = (elem, properties) => {
+  // create the DOM element according to the tag name passed in
   let element = document.createElement(elem);
 
   for (let prop in properties) {
+    // for each key-value in the properties object, apply it to the element
     element[prop] = properties[prop];
   }
 
@@ -26,6 +31,7 @@ const removeElem = (elem, parent) => {
 };
 
 const removeAllElements = elements => {
+  // set the elements to a constant so that each iteration in the loop doesn't shift over the items in the array
   const allElements = elements;
   for (i=0; i < allElements.length; i++) {
     removeElem(allElements[i], allElements[i].parentElement);
@@ -124,39 +130,56 @@ const removeAllElements = elements => {
   }
 
   const highlightEmojiCharacter = (emojiElem) => {
+    // bind a click event to the emoji link with copyToClipboard func
     emojiElem.addEventListener('click', copyToClipboard, true);
+    // we need its parent container to check for hidden input fields inside
     const parent = emojiElem.parentElement;
+    // create the hidden input field DOM element
     const hiddenField = createElemWithProps('input', {
       className: 'copy--input',
       type: 'text'
     });
 
+    // if there isn't a hidden input field already
     if (parent.getElementsByClassName('copy--input').length == 0) {
+      // make sure the hidden input field's value is set to the emoji character
       hiddenField.value = emojiElem.innerHTML;
+      // append to the link's parent, so it sits as a sibling to the link in the DOM
       addedElem = parent.appendChild(hiddenField);
     }
 
+    // update the UI to ask the user to click an emoji
     removeClass(messageToClick, 'hidden');
   }
 
   const copyToClipboard = e => {
+    // set all constants at once
     const
+      // the element on which the click event occurred
       emojiElem = e.target,
+      // check if there's a hidden input field injected beside this emoji already
       hiddenField = emojiElem.parentElement.getElementsByClassName('copy--input')[0],
       input = (hiddenField ? hiddenField : null);
+      // this message will show up when an emoji is copied
       copiedMessage = `${emojiElem.innerHTML} is copied!`;
 
+    // only run copying to clipboard if the input field is there and can be highlighted
     if (input && input.select) {
+      // highlight the input's value
       input.select();
 
       try {
+        // copy to clipboard whatever highlighted value is present on the entire DOM
         document.execCommand('copy');
+        // blur aka "deselect" the input field so it's not in focus
         input.blur();
       }
       catch (error) {
+        // should this fail because execCommand is not supported by browser, alert the user to copy manually
         alert('Highlight the emoji and press Ctrl/Cmd+C to copy');
       }
 
+      // update the UI to alert user to having copied an emoji successfully
       addClass(messageToClick, 'hidden');
       removeClass(messageConfirm, 'hidden');
       messageConfirm.innerHTML = copiedMessage;
@@ -164,6 +187,7 @@ const removeAllElements = elements => {
   }
 
   const delay = (func, delay) => {
+    // set a timeout to call a function after a delay
     window.setTimeout(func, delay);
   }
 })();
