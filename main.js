@@ -64,28 +64,36 @@ const removeAllElements = elements => {
     }
   }, false);
 
-  const matchKeyword = (value) => {
+  const matchKeyword = value => {
     let matchedEmojiTitles = [];
     const matchedObjects = EMOJIS.filter(filterByKeyword.bind(this, value));
 
     if (matchedObjects.length == 0) return;
 
-    for (const matched of matchedObjects) {
-      setMatchedEmojiVisible(matched);
+    matchedObjects.map(obj => {
+      matchedEmojiTitles.push(obj.keywords[0]);
+    });
+
+    for (const emoji of matchedEmojiTitles) {
+      const emojiItem = document.querySelector(`[title="${emoji}"]`);
+
+      if (emojiItem) {
+        addClass(emojiItem.parentElement,'visible');
+        highlightEmojiCharacter(emojiItem);
+      }
     }
 
-    // Add a filtering class to the site container which will hide all emojis that do NOT have a visible class
     addClass(siteContainer, 'filtering');
   }
 
   const filterByKeyword = (value, obj) => {
-    return obj.keywords.some((keyword) => {
+    return obj.keywords.some(keyword => {
       return value === keyword;
     });
   }
 
   // Resetting previous search results
-  const resetOldEmojis = (value) => {
+  const resetOldEmojis = value => {
     // Loop through the array of emojis that was passed to the function
     for (const prev of value) {
       // For each one, remove the visible class
@@ -93,16 +101,7 @@ const removeAllElements = elements => {
     };
   }
 
-  const setMatchedEmojiVisible = ({emoji, keywords}) => {
-    const emojiItem = document.querySelector(`[title="${keywords[0]}"]`);
-
-    if (emojiItem) {
-      addClass(emojiItem.parentElement, 'visible');
-      highlightEmojiCharacter(emojiItem);
-    }
-  }
-
-  const highlightEmojiCharacter = (emojiElem) => {
+  const highlightEmojiCharacter = emojiElem => {
     emojiElem.addEventListener('click', copyToClipboard, true);
     const parent = emojiElem.parentElement;
     const hiddenField = createElemWithProps('input', {
